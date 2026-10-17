@@ -1,0 +1,253 @@
+:root {
+    --bg-dark: #f4f7fb;
+    --bg-panel: rgba(255, 255, 255, 0.88);
+    --bg-soft: #eef3f8;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #64748b;
+    --primary: #7c3aed;
+    --secondary: #22d3ee;
+    --accent: #f59e0b;
+    --border: rgba(100, 116, 139, 0.2);
+    --shadow: 0 20px 45px rgba(71, 85, 105, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f1f8 48%, #ffffff 100%);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem 7%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.menu-btn {
+    position: absolute;
+    left: 7%;
+}
+
+/* .logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+} */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    font-weight: 600;
+    color: var(--muted);
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+nav .logo {
+    width: 38px;
+    height: 38px;
+}
+
+.main,
+main {
+    min-height: calc(100vh - 140px);
+}
+
+.home,
+.skill,
+.contatti {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 4rem 7%;
+}
+
+.home {
+    gap: clamp(2rem, 6vw, 6rem);
+}
+
+/* .home-content,
+.skill-content,
+.contatti-content {
+    width: min(100%, 900px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 252, 0.9));
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: clamp(2rem, 4vw, 4rem);
+} */
+
+.home-content {
+    flex: 1;
+    max-width: 760px;
+    transform: translateY(48px);
+}
+
+.home-blob {
+    position: relative;
+    flex: 0 0 clamp(300px, 42vw, 560px);
+    transform: translateY(-24px);
+}
+
+.home-blob svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.home-content {
+    text-align: center;
+}
+
+.home-content h1,
+.skill-content h1,
+.contatti-content h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.05em;
+}
+
+.home-content p,
+.contatti-content p {
+    color: var(--muted);
+    font-size: 1.08rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 16px 30px rgba(124, 58, 237, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 35px rgba(34, 211, 238, 0.25);
+}
+
+.skill-content ul,
+.contatti-content ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-content li,
+.contatti-content li {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.1rem 1rem;
+    color: var(--text);
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-content li:hover,
+.contatti-content li:hover {
+    transform: translateY(-3px);
+    border-color: rgba(124, 58, 237, 0.7);
+}
+
+.contatti-content {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 1.5rem 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.2rem;
+    }
+
+    nav {
+        gap: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .home,
+    .skill,
+    .contatti {
+        padding: 3rem 1rem;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-blob {
+        flex-basis: auto;
+        width: min(82vw, 380px);
+    }
+
+    .home-content,
+    .skill-content,
+    .contatti-content {
+        border-radius: 20px;
+        padding: 1.5rem 1.2rem;
+    }
+
+    
+}
